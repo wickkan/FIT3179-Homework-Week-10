@@ -35,6 +35,9 @@
     {"filter": "datum.minimum_nights > min_nights"},
     {"filter": "datum.availability_365 > avail"}
   ],
+"layer":[
+  {
+"mark": "circle",
 "encoding": {
     "x": {
       "field": "minimum_nights",
@@ -45,11 +48,12 @@
       "field": "availability_365",
       "type": "quantitative",
       "title": "Availability (days per year)"
-    }
-  },
-"layer": [
-    {
-      "mark": "circle"
-    }
-  ]
+    },
+    "tooltip" : [
+      {"field": "minimum_nights", "type" : "quantitative", "title": "Minimum Nights"},
+      {"field": "availability_365", "type" : "quantitative", "title": "Availability"}
+    ]
+  }
+  }
+]
 }
