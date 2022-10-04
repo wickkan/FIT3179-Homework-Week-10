@@ -1,0 +1,55 @@
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+"width": 800,
+"height": 450,
+"title": { "text": "Minimum Nights vs Availability", "font": "sans-serif","fontSize": {"expr": "20"}},
+"data": {
+"url":
+"https://raw.githubusercontent.com/wickkan/FIT3179-Homework-Week-9/main/AB_NYC_2019.csv"
+},
+"params": [
+    {
+      "name": "min_nights",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 600,
+        "step": 2,
+        "name": "Minimum number of nights: "
+      }
+    },
+    {
+      "name": "avail",
+      "value": 0,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 350,
+        "step": 2,
+        "name": "Availability: "
+      }
+    }
+  ],
+"transform": [
+    {"filter": "datum.minimum_nights > min_nights"},
+    {"filter": "datum.availability_365 > avail"}
+  ],
+"encoding": {
+    "x": {
+      "field": "minimum_nights",
+      "type": "quantitative",
+      "title": "Minimum Nights"
+    },
+    "y": {
+      "field": "availability_365",
+      "type": "quantitative",
+      "title": "Availability (days per year)"
+    }
+  },
+"layer": [
+    {
+      "mark": "circle"
+    }
+  ]
+}

@@ -2,8 +2,19 @@ h1 {
     font-family: sans-serif;
     text-align: center;
 }
+
+#spacer {
+    top: 100px;
+}
+
 #nyc_map {
         top: 50px;
         bottom: 50px;
         left: 300px;
+}
+
+#nights_avail {
+    top: 100px;
+    bottom: 100px;
+    left: 300px;
 }
